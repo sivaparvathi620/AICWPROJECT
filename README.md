@@ -56,4 +56,3 @@ GROQ_API_KEY=your_actual_api_key_here
 
 4.Run the Application
 python app.py
-
