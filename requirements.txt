@@ -1,0 +1,8 @@
+Flask
+numpy
+tensorflow
+Werkzeug
+groq
+python-dotenv
+gTTS
+Pillow
