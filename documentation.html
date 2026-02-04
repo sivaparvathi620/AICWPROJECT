@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedAI | Medical Reference Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0b1120; color: #e2e8f0; font-family: 'Inter', sans-serif; padding: 40px; }
+        .doc-card { background: #111827; border-radius: 20px; padding: 35px; border: 1px solid #1e293b; max-width: 900px; margin: auto; }
+        .med-header { border-bottom: 2px solid #3b82f6; padding-bottom: 15px; margin-bottom: 30px; }
+        .module-section { margin-bottom: 40px; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; }
+        .lang-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 10px; }
+        .en-text { border-left: 3px solid #60a5fa; padding-left: 10px; }
+        .te-text { border-left: 3px solid #10b981; padding-left: 10px; font-family: 'Gautami', sans-serif; }
+        h4 { color: #60a5fa; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container doc-card shadow-lg">
+    <div class="d-flex justify-content-between align-items-center med-header">
+        <h2><i class="fas fa-user-md me-2"></i> Your Latest Analysis Report</h2>
+        <a href="/" class="btn btn-outline-light rounded-pill">Back to Home</a>
+    </div>
+
+    {% if record %}
+    <div class="user-result-box p-4 mb-4" style="background: rgba(59, 130, 246, 0.1); border-radius: 15px;">
+        <h5 class="text-primary">Patient: {{ user_name }}</h5>
+        <p class="mb-1"><strong>Scan Performed:</strong> {{ record[0] }}</p>
+        <p class="mb-1"><strong>Date:</strong> {{ record[3] }}</p>
+        <hr style="border-color: #3b82f6;">
+        
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <h4 class="fw-bold {{ 'text-danger' if 'Detected' in record[1] else 'text-success' }}">
+                    Status: {{ record[1] }}
+                </h4>
+            </div>
+            <div class="col-md-6 text-end">
+                <h4 class="text-info">Confidence: {{ record[2] }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-5 mb-3 text-secondary">Understanding Your Result</h3>
+    <div class="module-section">
+        <p>Your <strong>{{ record[0] }}</strong> scan shows a status of <strong>{{ record[1] }}</strong>. 
+        Refer to the guide below for clinical context.</p>
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+        <i class="fas fa-folder-open fa-3x mb-3 text-muted"></i>
+        <h3>No Analysis Found</h3>
+        <p>Please upload a scan in the dashboard to see your personal documentation here.</p>
+        <a href="/dashboard" class="btn btn-primary mt-3">Go to Dashboard</a>
+    </div>
+    {% endif %}
+</div>
+
+
+        <div class="alert alert-warning mt-4 text-center">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            <strong>Disclaimer:</strong> This documentation is for educational purposes. 
+            All AI reports must be validated by a Medical Professional.
+        </div>
+    </div>
+</body>
+</html>

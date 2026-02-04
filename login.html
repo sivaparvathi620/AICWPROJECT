@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI Medical Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { 
+            background: radial-gradient(circle, #0f172a, #020617); 
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .login-container { 
+            max-width: 400px; 
+            margin: auto; 
+            background: rgba(30, 41, 59, 0.7); 
+            padding: 40px; 
+            border-radius: 20px; 
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        .form-control {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #334155;
+            color: white;
+        }
+        .form-control:focus {
+            background: rgba(15, 23, 42, 1);
+            color: white;
+            border-color: #38bdf8;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #2563eb);
+            border: none;
+            font-weight: bold;
+            padding: 12px;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0ea5e9, #1d4ed8);
+        }
+        a { color: #38bdf8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="login-container w-100">
+        <h2 class="text-center mb-4">Welcome Back</h2>
+        <p class="text-center text-secondary small mb-4">Enter your credentials to access the portal</p>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-danger py-2 small" style="background: rgba(220, 38, 38, 0.2); border: 1px solid #dc2626; color: white;">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/login" method="POST">
+            <div class="mb-3">
+                <label class="form-label small text-secondary">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-4">
+                <label class="form-label small text-secondary">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mb-3">Login to Portal</button>
+        </form>
+        
+        <p class="text-center mt-3 small text-secondary">
+            New user? <a href="{{ url_for('register') }}">Create an account</a>
+        </p>
+    </div>
+</body>
+</html>
