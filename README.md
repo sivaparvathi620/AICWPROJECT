@@ -74,5 +74,40 @@ Bash
 python app.py
 Access the Dashboard: Open your browser and go to http://127.0.0.1:5000
 
+## 📸 Project Screenshots
+
+### Register Page
+<img width="901" height="846" alt="image" src="https://github.com/user-attachments/assets/32f83780-aa60-4b3e-b68a-94d42c52b6ca" />
+
+### Login Page
+<img width="946" height="860" alt="image" src="https://github.com/user-attachments/assets/531f0620-fab5-40f3-9feb-d8de1a5a6116" />
+
+### Home Page
+<img width="1600" height="651" alt="image" src="https://github.com/user-attachments/assets/d94f19f3-c270-48ec-b2d2-ed1d8c8b37df" />
+<img width="1600" height="408" alt="image" src="https://github.com/user-attachments/assets/4cc04c57-733e-4b0c-814e-ccef0d48bf39" />
+
+
+### 🖥️ Analysis Dashboard
+<img width="1362" height="886" alt="image" src="https://github.com/user-attachments/assets/5ade469b-ebf1-4916-9eef-95b733f3d1b6" />
+
+### History Page
+<img width="1600" height="625" alt="image" src="https://github.com/user-attachments/assets/253d5f72-a0ba-4f2d-935f-6f8053d01375" />
+
+
+### 📊 AI Diagnostic Result
+<img width="1600" height="873" alt="image" src="https://github.com/user-attachments/assets/114396a8-0371-4a18-9a81-f46969a3dce4" />
+<img width="1600" height="619" alt="image" src="https://github.com/user-attachments/assets/26ec6eaf-f2fb-4f11-91ed-c4251c1f6b6c" />
+
+### Download The PPT
+<img width="1600" height="774" alt="image" src="https://github.com/user-attachments/assets/748aa2e8-d301-4624-b536-b0ad4c5c51b0" />
+
+### Previous Latest Doc
+<img width="1371" height="873" alt="image" src="https://github.com/user-attachments/assets/40f9349e-8889-4fb5-a105-cc18818c4f74" />
+
 👨‍💻 Developed by
-[Your Name / Team Name] Project for AICW - AI Medical Diagnostic Center
+This is Team Project for AICW - AI Medical Diagnostic Center
+
+1.M.SIVA PARVATHI
+2.G.H.S.DEEPTHI
+3.S.ASHA PRIYANKA
+4.B.ROSHINI
