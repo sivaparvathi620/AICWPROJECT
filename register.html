@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - AI Medical Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { 
+            background: radial-gradient(circle, #0f172a, #020617); 
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .register-container { 
+            max-width: 450px; 
+            margin: auto; 
+            background: rgba(30, 41, 59, 0.7); 
+            padding: 40px; 
+            border-radius: 20px; 
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        .form-control {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #334155;
+            color: white;
+        }
+        .form-control:focus {
+            background: rgba(15, 23, 42, 1);
+            color: white;
+            border-color: #38bdf8;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+        .btn-success {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border: none;
+            font-weight: bold;
+            padding: 12px;
+        }
+        a { color: #38bdf8; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="register-container w-100">
+        <h2 class="text-center mb-4">Patient Portal</h2>
+        <p class="text-center text-secondary small mb-4">Join our AI-powered medical diagnostic center</p>
+        
+        <form action="/register" method="POST">
+            <div class="mb-3">
+                <label class="form-label small text-secondary">Full Name</label>
+                <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label small text-secondary">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+            </div>
+            <div class="mb-4">
+                <label class="form-label small text-secondary">Create Password</label>
+                <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100 mb-3">Create Account</button>
+        </form>
+        <p class="text-center mt-3 small text-secondary">Already a member? <a href="/login">Login here</a></p>
+    </div>
+</body>
+</html>

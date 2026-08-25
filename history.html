@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedAI | Patient History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #0b1120; color: white; padding: 50px; font-family: 'Inter', sans-serif; }
+        .history-card { background: #111827; border-radius: 20px; padding: 30px; border: 1px solid #1e293b; }
+        .table { color: #e2e8f0; vertical-align: middle; }
+        .status-Normal { color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 5px 12px; border-radius: 20px; }
+        .status-Detected { color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 5px 12px; border-radius: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container history-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold">
+        <i class="fas fa-history me-2 text-primary"></i> Patient Analysis History
+    </h3>
+    <div class="d-flex gap-2">
+        <a href="/dashboard" class="btn btn-outline-light rounded-pill px-4">
+            <i class="fas fa-plus me-2"></i>New Analysis
+        </a>
+        <a href="/" class="btn btn-outline-light rounded-pill px-4">
+            <i class="fas fa-home me-2"></i>Home
+        </a>
+        <a href="/logout" class="btn btn-danger rounded-pill px-4">
+            <i class="fas fa-sign-out-alt me-2"></i>Logout
+        </a>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover mt-3">
+        <thead>
+            <tr>
+                <th>Date & Time</th>
+                <th>Patient Name</th>
+                <th>Scan Type</th>
+                <th>AI Diagnosis</th>
+                <th>Confidence</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for row in history %}
+    <tr>
+        <td class="small text-muted">{{ row[5] }}</td>
+        
+        <td class="fw-bold text-info">
+            <i class="fas fa-user-circle me-2"></i>{{ user_name }}
+        </td>
+        
+        <td><span class="text-uppercase small">{{ row[2] }}</span></td>
+        
+        <td>
+            <span class="status-{{ 'Detected' if 'Detected' in row[3] else 'Normal' }}">
+                {{ row[3] }}
+            </span>
+        </td>
+        
+        <td>
+            <span class="badge badge-conf bg-primary">{{ row[4] }}</span>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+    </table>
+</div>
+</body>
+</html>
